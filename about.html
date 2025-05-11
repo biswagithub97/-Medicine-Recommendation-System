@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us - Medical Health Center</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation Library -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-image: url('{{ url_for("static", filename="aboutbg.avif") }}');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-top: 30px;
+      color: #ffffff;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    }
+
+    .highlight {
+      color: #f8d210;
+      font-weight: bold;
+    }
+
+    .content-box {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      margin: 40px 0;
+    }
+
+    .team-img {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: block;
+      margin: 0 auto;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .team-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+    }
+
+    .info-box {
+      background: rgba(255, 255, 255, 0.1);
+      border-left: 5px solid #2ce0b9;
+      padding: 20px;
+      border-radius: 15px;
+      color: #fff;
+    }
+
+    h3 {
+      color: #2ce0b9;
+      margin-top: 30px;
+    }
+
+    .value-box {
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .value-box:hover {
+      transform: translateY(-5px);
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container text-center">
+    <h1 class="section-title" data-aos="fade-down">About Us</h1>
+    <p data-aos="fade-up">Welcome to <span class="highlight">Medical Health Center</span>, where <strong>health meets technology</strong> for a brighter, healthier future.</p>
+
+    <h3 data-aos="fade-right">Our Vision</h3>
+    <p class="info-box" data-aos="fade-left">
+      We envision a world where access to healthcare information is a <strong>fundamental right</strong>, empowering individuals with accurate, timely, and personalized knowledge to make informed decisions and lead healthier lives confidently.
+    </p>
+
+    <div class="content-box" data-aos="zoom-in">
+      <h3 class="fw-bold">Who We Are</h3>
+      <p>We are a team of doctors, data scientists, and developers working together to make healthcare <span class="highlight">accessible</span> and <span class="highlight">personalized</span>.</p>
+
+      <div class="row my-4">
+        <div class="col-md-6 mb-4" data-aos="fade-right">
+          <img src="{{ url_for('static', filename='abi1.jpg') }}" class="team-img" alt="Team member 1">
+        </div>
+        <div class="col-md-6 mb-4" data-aos="fade-left">
+          <img src="{{ url_for('static', filename='abi2.jpg') }}" class="team-img" alt="Team member 2">
+        </div>
+      </div>
+    </div>
+
+    <h5 class="mt-5" style="color: #ffc107;" data-aos="fade-up">Why It Matters</h5>
+    <p class="info-box" data-aos="fade-up">
+      Accurate health information helps reduce fear, prevent misinformation, and encourage healthy choices. Whether you're managing a chronic condition or simply improving your lifestyle, reliable guidance can make a huge difference.
+    </p>
+
+    <h5 style="color: #00d9ff;" data-aos="fade-up">Trusted Sources</h5>
+    <p class="info-box" data-aos="fade-up">
+      All our health content is verified using reputable sources such as the World Health Organization (WHO), Centers for Disease Control and Prevention (CDC), and peer-reviewed medical journals.
+    </p>
+
+    <p class="mt-4 info-box" data-aos="fade-up">Stay informed. Stay healthy. Let’s build a stronger, healthier community together.</p>
+
+    <h3 data-aos="fade-down">Our Core Values</h3>
+    <div class="row mt-4">
+      <div class="col-md-4 mb-3" data-aos="flip-left">
+        <div class="value-box shadow">
+          <h5 class="text-success">Compassion</h5>
+          <p>We prioritize empathy and care in every interaction — because health is human first.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3" data-aos="flip-up">
+        <div class="value-box shadow">
+          <h5 class="text-info">Innovation</h5>
+          <p>We embrace modern technology to push the boundaries of what healthcare can achieve.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3" data-aos="flip-right">
+        <div class="value-box shadow">
+          <h5 class="text-warning">Integrity</h5>
+          <p>Your trust is vital. We’re committed to transparency, privacy, and ethical AI practices.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-center mt-4 fw-bold" data-aos="fade-in">Thank you for choosing us!</p>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Medical Blog Post</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+        background-image: url('{{ url_for("static", filename="blogbg1.avif") }}');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: #000;
+      }
+
+      .blog-container {
+        background: rgba(142, 182, 184, 0.9);
+        padding: 50px;
+        border-radius: 20px;
+        margin-top: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      h1 {
+        text-align: center;
+        font-weight: 700;
+        color: #0056b3;
+        margin-bottom: 40px;
+      }
+
+      h2 {
+        color: #007bff;
+        font-weight: bold;
+      }
+
+      p, li {
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+
+      .blog-img {
+        width: 100%;
+        max-width: 450px;
+        height: auto;
+        border-radius: 12px;
+        margin: 20px auto;
+        display: block;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .blog-img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.4);
+      }
+
+      .blog-post {
+        margin-bottom: 60px;
+        padding-bottom: 30px;
+        border-bottom: 2px dashed #ccc;
+      }
+
+      .highlight-box {
+        background-color: #f8f9fa;
+        border-left: 6px solid #17a2b8;
+        padding: 15px 20px;
+        margin-top: 20px;
+        border-radius: 10px;
+      }
+
+      /* Optional Image Borders */
+      .blog-img-1 { border: 3px solid #007bff; }
+      .blog-img-2 { border: 3px solid #28a745; }
+      .blog-img-3 { border: 3px solid #ffc107; }
+      .blog-img-4 { border: 3px solid #dc3545; }
+      .blog-img-5 { border: 3px solid #17a2b8; }
+    </style>
+  </head>
+
+  <body>
+    <div class="container blog-container" data-aos="fade-up" data-aos-duration="1500">
+      <h1><i class="fas fa-notes-medical me-2"></i>Medical Blogs - Insights on Healthcare and AI</h1>
+
+      <!-- Blog Loop Starts -->
+      <div class="blog-post" data-aos="fade-right">
+        <h2>Building a Symptom-Based Disease Diagnosis Web App</h2>
+        <p>In today's digital age, timely and accurate healthcare is more critical than ever. With the increasing demand for remote solutions, we developed a <strong>symptom-based disease diagnosis app</strong> that bridges the gap between health queries and intelligent responses.</p>
+        <div class="text-center my-3">
+          <img src="{{ url_for('static', filename='blg1.jpg') }}" alt="Big Data Healthcare" class="blog-img blog-img-1">
+        </div>
+        <p>This AI-powered healthcare app is more than a tool—it's a companion for proactive well-being. It reflects our mission to bring tech and healthcare together for a healthier future.</p>
+      </div>
+
+      <div class="blog-post" data-aos="fade-left">
+        <h2>Understanding the Role of AI in Healthcare</h2>
+        <img src="{{ url_for('static', filename='blg2.jpg') }}" alt="AI Healthcare" class="blog-img blog-img-2">
+        <p>AI is revolutionizing the healthcare industry, from diagnostic tools to patient management systems. This post explores the key ways AI is being integrated into medical practices and the benefits it brings.</p>
+      </div>
+
+      <div class="blog-post" data-aos="fade-up">
+        <h2>The Future of Telemedicine and Remote Healthcare</h2>
+        <img src="{{ url_for('static', filename='blg3.jpg') }}" alt="Telemedicine" class="blog-img blog-img-3">
+        <p>Telemedicine has become a lifeline during global crises. We explore the rapid advancements in remote healthcare solutions and what the future holds for telemedicine.</p>
+      </div>
+
+      <div class="blog-post" data-aos="fade-right">
+        <h2>How Big Data is Shaping Healthcare Decisions</h2>
+        <img src="{{ url_for('static', filename='blg4.jpg') }}" alt="Big Data Healthcare" class="blog-img blog-img-4">
+        <p>Big data enables healthcare professionals to make more informed decisions. This blog post discusses the role of big data in improving patient outcomes and reducing costs.</p>
+      </div>
+
+      <div class="blog-post" data-aos="fade-left">
+        <h2>The Importance of Personalized Healthcare</h2>
+        <img src="{{ url_for('static', filename='blg5.jpg') }}" alt="Personalized Medicine" class="blog-img blog-img-5">
+        <p>Personalized medicine is transforming how we approach treatment. This blog explains how personalized treatments are tailored to individual patient profiles.</p>
+      </div>
+
+      <!-- Continue remaining blog posts with similar structure and AOS data attributes -->
+
+      <!-- You can copy similar blocks for Blog 6–10 with AOS animations like `fade-up-right`, `fade-up-left`, etc. -->
+    </div>
+
+    <!-- JS Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
