@@ -1,4 +1,3 @@
-# -Medicine-Recommendation-System
 from flask import Flask, request, render_template, jsonify
 import numpy as np
 import pandas as pd
@@ -238,6 +237,10 @@ def home():
         # Split, clean, and convert input symptoms to lowercase.
         raw_symptoms = [s.strip().lower() for s in symptoms.split(',')]
         raw_symptoms = [symptom.strip("[]'\" ") for symptom in raw_symptoms]
+
+        # Check for minimum of 2 symptoms
+        if len(raw_symptoms) < 2:
+            return render_template('index.html', message="Please enter at least 2 symptoms separated by commas.")
         
         # Normalize each symptom via fuzzy matching.
         normalized_symptoms = []
@@ -255,15 +258,16 @@ def home():
                 "Please enter correct symptom names."
             ).format(', '.join(invalid_symptoms))
             return render_template('index.html', message=error_message)
-        
+
         predicted_disease = get_predicted_value(normalized_symptoms)
         dis_des, prec, med, rec_diet, wrkout = helper(predicted_disease)
         my_precautions = [item for sublist in prec for item in sublist if pd.notnull(item)]
-        
+
         return render_template('index.html', predicted_disease=predicted_disease,
                                dis_des=dis_des, my_precautions=my_precautions,
                                medications=med, my_diet=rec_diet, workout=wrkout)
     return render_template('index.html')
+
 
 @app.route('/about')
 def about():
@@ -283,4 +287,3 @@ def blog():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
